@@ -4,30 +4,46 @@
 
 After a thorough evaluation of four free Shopify 2026 Online Store 2.0 themes (Horizon, Dawn, Craft, and Sense), **Horizon** is the primary recommendation for this new e-commerce build.
 
+* **Upstream Version:** Horizon v4.2.0 (Official upstream release featuring enhanced RTL layout support and mobile cart stability fixes—see `RELEASE-NOTES.md` for details).
+
 **1. Primary Recommendation: Horizon**
 Horizon’s modern component-driven architecture is vastly superior for long-term scalability. It features up to 8 levels of nested blocks and native AI-assisted design tools, providing massive layout flexibility without requiring a developer.
 
 **2. Alternative Recommendation: Dawn**
-If absolute historical stability and access to the largest pool of community documentation is preferred over modern design flexibility, **Dawn** is the strongest alternative.
+If absolute historical stability and access to the largest pool of community documentation is preferred over modern design flexibility, **Dawn (v16.0.0)** is the strongest alternative.
 
 **3. Trade-offs & Justification**
 While alternative themes like Craft and Sense offered marginal speed advantages in mobile demo testing (6.4s and 6.2s LCP vs Horizon's 7.1s), their niche design constraints (typography-heavy or pastel aesthetics) require heavy custom CSS to adapt to a standard store. Dawn, while flexible, suffers from rigid top-level sections and performed slower in demo testing (17.2s LCP). Horizon is chosen as the winner because its flexibility outweighs the sub-second speed advantage of the niche themes.
 
+## Customization & Upgrade Safety Guidelines
+
+**Important:** Because Horizon receives frequent upstream updates, **do not modify core theme files directly** (such as `base.css`, `global.js`, or core `sections/*.liquid` files). Modifying these files will cause your changes to be overwritten or create merge conflicts during the next theme update.
+
+To safely customize the theme:
+
+1. **Custom CSS:** Use the native "Custom CSS" input box in the Theme Editor for minor tweaks. For extensive styling, create a `custom.css` file in the `assets/` folder and link it before the `</head>` tag in `layout/theme.liquid`.
+2. **Custom JavaScript:** Create a `custom.js` file in the `assets/` folder and link it just before the closing `</body>` tag in `layout/theme.liquid`.
+3. **HTML / Liquid Changes:** Instead of editing existing sections, create entirely new sections or snippets, or use the native "Custom Liquid" block directly inside the Shopify Theme Editor.
+
 ## Repository Contents
 
-* `/theme` - The extracted, unmodified source code for the recommended Horizon theme.
-* `RESEARCH.md` - Complete testing methodology, performance data matrix, and technical pros/cons for all evaluated themes.
-* `SOURCES.md` - Bibliography, testing dates, and official documentation references.
+* **Root Directory (`/`)** - The extracted source code for the recommended Horizon theme.
+* **`RESEARCH.md`** - Complete testing methodology, performance data matrix, and technical pros/cons for all evaluated themes.
+* **`SOURCES.md`** - Bibliography, testing dates, and official documentation references.
+* **`AI_USAGE.md`** - Disclosure of AI tools and Shopify agent skills utilized during the research and documentation phase.
+* **`LICENSE.md`** - Licensing information (MIT License) defining how the codebase can be used and distributed.
+* **`RELEASE-NOTES.md`** - Official upstream release notes detailing bug fixes and feature additions (e.g., RTL support).
 
 ## Code Quality Verification
 
-The Horizon source code provided in the `/theme` directory was verified against Shopify's official linter using the Shopify CLI (`shopify theme check`). The code successfully passes Shopify's Liquid and JSON structural best practices with no critical errors or blocking offenses.
+Inspected using **Shopify CLI v4.8.0**. The theme code successfully passes Shopify's structural best practices with 6 minor, non-blocking configuration warnings and 0 critical errors.
 
 **Theme Check Summary:**
 
 * **Files inspected:** 358
 * **Total offenses:** 6 warnings (0 critical errors)
-* **Details:** Minor non-blocking configuration warnings (one `ExcessiveSettingsCount` in the header, and five `UnusedDocParam` in a divider snippet).
+* **Details:** Minor non-blocking configuration warnings (one `ExcessiveSettingsCount` in `sections/header.liquid`, and five `UnusedDocParam` in `snippets/divider.liquid`).
+  *(Note: These warnings do not affect runtime performance or functionality.)*
 
 <details>
 <summary><strong>Click to view full Theme Check log</strong></summary>

@@ -10,8 +10,12 @@ All performance testing and theme evaluations were conducted on **September 22, 
 * **Shopify Theme Store (Craft):** [https://themes.shopify.com/themes/craft](https://themes.shopify.com/themes/craft) - *Checked Sept 22, 2026*
 * **Shopify Theme Store (Sense):** [https://themes.shopify.com/themes/sense](https://themes.shopify.com/themes/sense) - *Checked Sept 22, 2026*
 * **Shopify Developer Documentation (OS 2.0 Architecture):** [https://shopify.dev/docs/themes/architecture](https://shopify.dev/docs/themes/architecture) - *Checked Sept 22, 2026*
-* **Horizon GitHub Repository:** [https://github.com/Shopify/horizon](https://github.com/Shopify/horizon) - *Checked Sept 22, 2026*
 * **Dawn GitHub Repository:** [https://github.com/Shopify/dawn](https://github.com/Shopify/dawn) - *Checked Sept 22, 2026*
+* **Shopify Agent Skills (shopify-liquid):** [https://github.com/Shopify/agent-skills/tree/main/shopify-liquid](https://github.com/Shopify/agent-skills/tree/main/shopify-liquid) - *Official repository and guidelines for the shopify-liquid AI agent tool referenced during development. Checked Sept 23, 2026*
+* **Horizon GitHub Repository (Source & License):** [https://github.com/Shopify/horizon](https://github.com/Shopify/horizon)
+
+  * *Upstream Commit:* `5acd1b6` (Merged Sep 21, 2026)
+  * *License:* Distributed under the MIT License. Open-source and permitted for personal and commercial Shopify modifications. Checked Sept 23, 2026.
 
 ## Independent Reviews & Tools
 
