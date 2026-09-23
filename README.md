@@ -1,19 +1,20 @@
+
 # E-Commerce Theme Recommendation: Horizon
 
 ## Executive Summary
 
 After a thorough evaluation of four free Shopify 2026 Online Store 2.0 themes (Horizon, Dawn, Craft, and Sense), **Horizon** is the primary recommendation for this new e-commerce build.
 
-* **Upstream Version:** Horizon v4.2.0 (Official upstream release featuring enhanced RTL layout support and mobile cart stability fixes—see `RELEASE-NOTES.md` for details).
+* **Upstream Version:** Horizon v4.2.0 (Official upstream release featuring enhanced RTL layout support and mobile cart stability fixes—see `release-notes.md` for details).
 
 **1. Primary Recommendation: Horizon**
-Horizon’s modern component-driven architecture is vastly superior for long-term scalability. It features up to 8 levels of nested blocks and native AI-assisted design tools, providing massive layout flexibility without requiring a developer.
+Horizon’s modern component-driven architecture provides significant structural benefits for long-term scalability. It features up to 8 levels of nested blocks and native AI-assisted design tools, offering extensive layout flexibility without requiring a developer.
 
 **2. Alternative Recommendation: Dawn**
-If absolute historical stability and access to the largest pool of community documentation is preferred over modern design flexibility, **Dawn (v16.0.0)** is the strongest alternative.
+If historical stability and access to the largest pool of community documentation are prioritized over modern design flexibility, **Dawn (v16.0.0)** is the strongest alternative.
 
 **3. Trade-offs & Justification**
-While alternative themes like Craft and Sense offered marginal speed advantages in mobile demo testing (6.4s and 6.2s LCP vs Horizon's 7.1s), their niche design constraints (typography-heavy or pastel aesthetics) require heavy custom CSS to adapt to a standard store. Dawn, while flexible, suffers from rigid top-level sections and performed slower in demo testing (17.2s LCP). Horizon is chosen as the winner because its flexibility outweighs the sub-second speed advantage of the niche themes.
+While alternative themes like Craft and Sense offered marginal speed advantages in mobile demo testing (6.4s and 6.2s LCP vs Horizon's 7.1s), their niche design constraints (typography-heavy or pastel aesthetics) require heavy custom CSS to adapt to a standard store. Dawn, while flexible, suffers from rigid top-level sections and performed slower in demo testing (17.2s LCP). Horizon is chosen as the primary recommendation because its architectural flexibility outweighs the sub-second baseline speed advantage of the niche themes.
 
 ## Customization & Upgrade Safety Guidelines
 

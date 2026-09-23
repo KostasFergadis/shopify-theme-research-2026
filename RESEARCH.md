@@ -1,4 +1,3 @@
-
 # Shopify Theme Comparison Research
 
 ## Performance Methodology & Benchmark Links
@@ -29,26 +28,26 @@ To evaluate baseline mobile performance, each theme's official Shopify demo stor
 
 ## Comparison Matrix
 
-| Feature / Metric             | Horizon              | Dawn                | Craft           | Sense        |
-| :--------------------------- | :------------------- | :------------------ | :-------------- | :----------- |
-| **Mobile Speed (LCP)** | 7.1 s                | 17.2 s              | 6.4 s           | 6.2 s        |
-| **Customization Ease** | High (Nested blocks) | Medium              | Medium          | Low (Niche)  |
-| **GitHub Source**      | Yes (via Dawn base)  | Yes (Public)        | No              | No           |
-| **Best For**           | Modern basic stores  | Safe, stable builds | Single products | Beauty/Niche |
+| Feature / Metric             | Horizon                                                  | Dawn                                                | Craft             | Sense             |
+| :--------------------------- | :------------------------------------------------------- | :-------------------------------------------------- | :---------------- | :---------------- |
+| **Mobile Speed (LCP)** | 7.1 s                                                    | 17.2 s                                              | 6.4 s             | 6.2 s             |
+| **Customization Ease** | High (Nested blocks)                                     | Medium                                              | Medium            | Low (Niche)       |
+| **GitHub Source**      | [Yes (Official Repo)](https://github.com/Shopify/horizon) | [Yes (Public Repo)](https://github.com/Shopify/dawn) | No Dedicated Repo | No Dedicated Repo |
+| **Best For**           | Modern basic stores                                      | Safe, stable builds                                 | Single products   | Beauty/Niche      |
 
 ## Detailed Breakdown
 
 ### 1. Horizon
 
-* **Pros:** Features up to 8 levels of nested blocks, allowing for advanced drag-and-drop layout flexibility without custom code. It includes built-in AI block generation and native modern UI features (like transparent headers and color swatches) out of the box.
+* **Pros:** Features up to 8 levels of nested blocks, allowing for advanced drag-and-drop layout flexibility without custom code.
 * **Cons & Risks:** Because it is a newer, constantly evolving framework, frequent updates can sometimes overwrite custom code if the merchant heavily modifies the theme files without proper version control.
-* **Updates & Support:** **High update frequency.** As Shopify's modern framework, it receives rapid feature updates and bug fixes (like the RTL layout fixes in v4.2.0). Supported directly by official Shopify Help Center documentation and detailed release notes.
+* **Updates & Support:** **Actively maintained & highly frequent.** The official repository demonstrates a consistent update cadence with multiple recent merges (e.g., September 21, September 18, 2026) directly addressing core Shopify OS 2.0 rollouts, RTL layouts, and mobile cart stability. Supported directly via the official Shopify Help Center.
 
 ### 2. Dawn
 
 * **Pros:** The most widely adopted and historically stable Online Store 2.0 theme. It is extremely reliable for a fast launch and boasts the most extensive community documentation and troubleshooting resources.
 * **Cons & Risks:** It relies on rigid top-level container sections, making complex or nested layouts very difficult without hiring a developer. It also lacks the native AI design tools found in newer generation themes.
-* **Updates & Support:** **Very frequent & stable updates.** As Shopify's flagship open-source theme, it has a public GitHub repository. It has the absolute largest support ecosystem, including vast community forums, third-party tutorials, and direct developer tracking.
+* **Updates & Support:** **Mature maintenance cycle.** Updates are spaced out across several months rather than rapid continuous releases. Official GitHub commits show Dawn 16.0.0 released on August 10, 2026 (commit `258f00f`) and Dawn 15.5.0 on June 19, 2026 (commit `83d5e6b`). Supported by the largest third-party community ecosystem, forums, and official Shopify documentation.
 
 ### 3. Craft
 
