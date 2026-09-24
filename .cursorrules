@@ -1,0 +1,34 @@
+# AI Development Skills & Rules for Horizon Theme
+
+## 1. Core Principles (Global Skill)
+- **Strictly use Vanilla JavaScript / TypeScript.**
+- DO NOT use React, Vue, or any frontend frameworks.
+- Prefer modern ES6+ syntax, Modules, and strictly typed TypeScript when generating logic.
+- Output clean, highly performant code focused on Web Vitals.
+
+## 2. Shopify OS 2.0 Skill
+- Never modify `base.css` or `theme.liquid` directly for styling/scripts to maintain update-safety.
+- All custom scripts and styles must be injected via the `snippets/custom-head.liquid` file.
+- When generating Liquid code, use modern OS 2.0 architecture (JSON templates, app blocks, section blocks).
+- Always use `{% liquid %}` tags for multiple assignments to keep files clean.
+
+## 3. GSAP & ScrollTrigger Skill (Animations)
+- Always use `gsap.context()` when writing complex animations to ensure easy cleanup and prevent memory leaks.
+- Prefer `yPercent` and `xPercent` over `y` and `x` for responsive transforms.
+- Animate `transform` and `opacity` only. Avoid animating layout properties like `width`, `top`, or `margin` to prevent CPU layout thrashing.
+- Import plugins specifically: `import { ScrollTrigger } from 'gsap/ScrollTrigger';` and register them via `gsap.registerPlugin(ScrollTrigger);`.
+
+## 4. Tailwind CSS Skill
+- Do not write custom CSS unless absolutely necessary. Rely on Tailwind utility classes.
+- Use Tailwind's `@apply` sparingly; prefer composing classes directly in the Liquid HTML.
+- For dynamic Liquid classes, ensure full class names are written out so Tailwind's JIT compiler can detect them (e.g., use `{% if active %}bg-blue-500{% endif %}`, never `bg-{{ color }}-500`).
+
+## 5. Embla Carousel Skill (Sliders)
+- Initialize Embla using the Vanilla JS API (not the React hook).
+- Import: `import EmblaCarousel from 'embla-carousel'`.
+- Store the Embla instance in a variable to access API methods like `emblaApi.scrollNext()`.
+- Rely on CSS for the layout (Flexbox) and let Embla handle the drag mechanics.
+
+## 6. Lenis Skill (Smooth Scroll)
+- Initialize Lenis at the root `main.ts` level.
+- Hook Lenis into GSAP ScrollTrigger using `ScrollTrigger.update` to keep animations perfectly synced with the smooth scroll.

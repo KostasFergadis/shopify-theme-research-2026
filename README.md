@@ -1,4 +1,3 @@
-
 # E-Commerce Theme Recommendation: Horizon
 
 ## Executive Summary
@@ -25,6 +24,43 @@ To safely customize the theme:
 1. **Custom CSS:** Use the native "Custom CSS" input box in the Theme Editor for minor tweaks. For extensive styling, create a `custom.css` file in the `assets/` folder and link it before the `</head>` tag in `layout/theme.liquid`.
 2. **Custom JavaScript:** Create a `custom.js` file in the `assets/` folder and link it just before the closing `</body>` tag in `layout/theme.liquid`.
 3. **HTML / Liquid Changes:** Instead of editing existing sections, create entirely new sections or snippets, or use the native "Custom Liquid" block directly inside the Shopify Theme Editor.
+
+## Frontend Development Architecture
+
+This theme utilizes a modern, headless-style build pipeline to compile custom assets (Tailwind CSS, Vanilla TypeScript) directly into Shopify's native structure.
+
+### Tech Stack
+
+* **Bundler:** Vite (via `vite-plugin-shopify`)
+* **Styling:** Tailwind CSS
+* **Scripts:** Vanilla TypeScript (Strictly no React)
+* **Libraries:** GSAP (ScrollTrigger), Lenis (Smooth Scroll), Embla Carousel
+
+### 🛡️ Update-Safe Strategy (Core Principle)
+
+To ensure the Horizon theme can receive continuous OS 2.0 updates from Shopify without overwriting our custom codebase, we **never modify core theme files** (`base.css`, `theme.liquid`).
+
+Instead, all Vite-compiled assets are injected via a single custom snippet:
+
+1. `snippets/custom-head.liquid` is created to hold the `vite-tag` renders.
+2. `{% render 'custom-head' %}` is placed directly above the `</head>` tag in `theme.liquid`.
+   During a theme update, only this single line needs to be restored to re-link all custom logic and styling.
+
+### 🔠 Font Management
+
+To keep the theme clean and prevent layout shifts (FOUT) or double-loading fonts:
+
+1. Native theme fonts can be disabled or set to system fonts in Shopify's Theme Editor (`settings_data.json`).
+2. Custom fonts (`.woff2`) are loaded locally via `frontend/entrypoints/main.css`.
+3. We safely override the theme's core typography using CSS variables at the root level (`--font-heading-family`, `--font-body-family`), ensuring the new fonts cascade cleanly without editing native CSS files.
+
+### Commands
+
+Run these simultaneously during development:
+
+* `npm run dev` - Starts the Vite compiler to watch the `/frontend` directory.
+* `shopify theme dev --store=YOUR_STORE_URL` - Syncs the local environment with the Shopify preview store.
+* `npm run build` - Generates minified production assets before deployment.
 
 ## Repository Contents
 

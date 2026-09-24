@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Example: Load your custom font cleanly */
+@font-face {
+  font-family: 'MyCustomFont';
+  /* Replace with your actual font file name uploaded to Shopify's assets folder */
+  src: url('{{ "my-custom-font.woff2" | asset_url }}') format('woff2'); 
+  font-display: swap;
+}
+
+:root {
+  /* Safely override Horizon's default font variables */
+  --font-heading-family: 'MyCustomFont', sans-serif !important;
+  --font-body-family: 'MyCustomFont', sans-serif !important;
+}
