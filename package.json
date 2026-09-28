@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/KostasFergadis/shopify-theme-research-2026#readme",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "autoprefixer": "^10.6.1",
     "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
