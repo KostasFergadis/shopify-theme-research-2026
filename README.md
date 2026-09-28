@@ -17,7 +17,7 @@ While alternative themes like Craft and Sense offered marginal speed advantages 
 
 ## Customization & Upgrade Safety Guidelines
 
-**Important:** Because Horizon receives frequent upstream updates, **do not modify core theme files directly** (such as `base.css`, `global.js`, or core `sections/*.liquid` files). Modifying these files will cause your changes to be overwritten or create merge conflicts during the next theme update.
+**Important:** Because Horizon receives frequent upstream updates, **do not modify core theme files directly** (such as `base.css`, or core `sections/*.liquid` files). Modifying these files will cause your changes to be overwritten or create merge conflicts during the next theme update.
 
 To safely customize the theme:
 
@@ -51,7 +51,7 @@ Instead, all Vite-compiled assets are injected via a single custom snippet:
 To keep the theme clean and prevent layout shifts (FOUT) or double-loading fonts:
 
 1. Native theme fonts can be disabled or set to system fonts in Shopify's Theme Editor (`settings_data.json`).
-2. Custom fonts (`.woff2`) are loaded locally via `frontend/entrypoints/main.css`.
+2. Custom fonts (`.woff2`) are loaded locally via `frontend/styles/main.css`.
 3. We safely override the theme's core typography using CSS variables at the root level (`--font-heading-family`, `--font-body-family`), ensuring the new fonts cascade cleanly without editing native CSS files.
 
 ### Commands
@@ -68,8 +68,8 @@ Run these simultaneously during development:
 * **`RESEARCH.md`** - Complete testing methodology, performance data matrix, and technical pros/cons for all evaluated themes.
 * **`SOURCES.md`** - Bibliography, testing dates, and official documentation references.
 * **`AI_USAGE.md`** - Disclosure of AI tools and Shopify agent skills utilized during the research and documentation phase.
-* **`LICENSE.md`** - Licensing information (MIT License) defining how the codebase can be used and distributed.
-* **`RELEASE-NOTES.md`** - Official upstream release notes detailing bug fixes and feature additions (e.g., RTL support).
+* **`LICENSE.md`** - Custom Shopify licensing information defining how the codebase can be used. It restricts usage strictly to Shopify integrations and explicitly prohibits reselling or publicly distributing the theme.
+* **`release-notes.md`** - Official upstream release notes detailing bug fixes and feature additions (e.g., RTL support).
 
 ## Code Quality Verification
 

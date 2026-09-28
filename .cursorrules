@@ -7,7 +7,7 @@
 - Output clean, highly performant code focused on Web Vitals.
 
 ## 2. Shopify OS 2.0 Skill
-- Never modify `base.css` or `theme.liquid` directly for styling/scripts to maintain update-safety.
+- Never modify `base.css` directly. `layout/theme.liquid` has been minimally modified to include `snippets/custom-head.liquid`—do not make any further modifications to it for styling or scripts.
 - All custom scripts and styles must be injected via the `snippets/custom-head.liquid` file.
 - When generating Liquid code, use modern OS 2.0 architecture (JSON templates, app blocks, section blocks).
 - Always use `{% liquid %}` tags for multiple assignments to keep files clean.

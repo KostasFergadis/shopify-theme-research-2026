@@ -241,15 +241,7 @@ class LocalizationFormComponent extends Component {
     const match = text.slice(startIndex, endIndex);
     const after = text.slice(endIndex);
 
-    let result = '';
-    if (before) {
-      result += `<mark>${before}</mark>`;
-    }
-    result += match;
-    if (after) {
-      result += `<mark>${after}</mark>`;
-    }
-    return result;
+    return `${before}<mark>${match}</mark>${after}`;
   }
 
   /**
