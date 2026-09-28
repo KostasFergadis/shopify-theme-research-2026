@@ -1,20 +1,11 @@
 {
-  "frontend/entrypoints/main.css": {
-    "file": "main-DixIRdCa.css",
-    "name": "main",
-    "names": [
-      "main.css"
-    ],
-    "src": "frontend/entrypoints/main.css",
-    "isEntry": true
-  },
   "frontend/entrypoints/main.ts": {
-    "file": "main-B-LiNAOB.js",
+    "file": "main.js",
     "name": "main",
     "src": "frontend/entrypoints/main.ts",
     "isEntry": true,
     "css": [
-      "main-DixIRdCa.css"
+      "main.css"
     ]
   }
 }

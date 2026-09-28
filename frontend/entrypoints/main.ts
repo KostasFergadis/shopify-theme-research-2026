@@ -1,5 +1,5 @@
 import 'vite/modulepreload-polyfill'; 
-import './main.css'; // Tells Vite to process the CSS
+import '../styles/main.css';
 
 // Import your libraries
 import { gsap } from 'gsap';

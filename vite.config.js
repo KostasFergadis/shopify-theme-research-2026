@@ -10,5 +10,12 @@ export default defineConfig({
   ],
   build: {
     emptyOutDir: false, // Ensures Vite doesn't delete Shopify's native assets
+    rollupOptions: {
+      output: {
+        entryFileNames: '[name].js',
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name].[ext]',
+      },
+    },
   },
 });

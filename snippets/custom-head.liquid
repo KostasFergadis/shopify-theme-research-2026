@@ -1,4 +1,3 @@
-{%- liquid
-  render 'vite-tag' with 'main.css'
-  render 'vite-tag' with 'main.ts'
--%}
+{% liquid
+  render 'vite-tag', entry: 'main.ts'
+%}

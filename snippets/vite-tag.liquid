@@ -6,9 +6,7 @@
   assign entry = entry | default: vite-tag
   assign path = entry | replace: '~/', '../' | replace: '@/', '../'
 %}
-{% if path == "/frontend/entrypoints/main.css" or path == "main.css" %}
-  {{ 'main-DixIRdCa.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
-{% elsif path == "/frontend/entrypoints/main.ts" or path == "main.ts" %}
-  <script src="{{ 'main-B-LiNAOB.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
-  {{ 'main-DixIRdCa.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
+{% if path == "/frontend/entrypoints/main.ts" or path == "main.ts" %}
+  <script src="{{ 'main.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  {{ 'main.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% endif %}
