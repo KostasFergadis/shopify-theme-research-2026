@@ -1,3 +1,28 @@
 {% liquid
   render 'vite-tag', entry: 'main.ts'
 %}
+
+<style>
+  /* 1. Clean variable overrides for Shopify's theme engine */
+  :root {
+    --font-body--family: 'Geist', sans-serif;
+    --font-heading--family: 'Geist', sans-serif;
+    --font-subheading--family: 'Geist', sans-serif;
+    --font-accent--family: 'Geist', sans-serif;
+    --button-font-family-primary: 'Geist Mono', monospace;
+    --button-font-family-secondary: 'Geist Mono', monospace;
+  }
+
+  /* 2. Standard body and typography */
+  body, p, span:not(button span, .button span, .btn span, .button-custom span, .variant-option__button-label span), h1, h2, h3, h4, h5, h6 {
+    font-family: 'Geist', sans-serif;
+  }
+
+  /* 3. CTAs, variant pills, and their inner text spans */
+  button, .button, .btn, .button-custom, 
+  .variant-option__button-label, input[type="submit"], [type="submit"],
+  button *, .button *, .btn *, .button-custom *, 
+  .variant-option__button-label * {
+    font-family: 'Geist Mono', monospace;
+  }
+</style>
