@@ -71,6 +71,12 @@ Run these simultaneously during development:
 * **`LICENSE.md`** - Custom Shopify licensing information defining how the codebase can be used. It restricts usage strictly to Shopify integrations and explicitly prohibits reselling or publicly distributing the theme.
 * **`release-notes.md`** - Official upstream release notes detailing bug fixes and feature additions (e.g., RTL support).
 
+## Security & Audit Notes
+
+During the final build, `npm audit` flagged vulnerabilities within the `liquidjs` dependency (high severity in `pop`, `strip_html`, and `join` filters).
+
+These were **intentionally not forced** (`npm audit fix --force`) because the required fix forces a major version upgrade to `vite-plugin-shopify@3.0.1`. This constitutes a breaking change that could destabilize the current build pipeline and Vite integration. The vulnerabilities are contained within the local build environment and do not affect the compiled storefront assets.
+
 ## Code Quality Verification
 
 Inspected using **Shopify CLI v4.8.0**. The theme code successfully passes Shopify's structural best practices with 6 minor, non-blocking configuration warnings and 0 critical errors.

@@ -1,4 +1,12 @@
 {
+  "assets/GeistMonoVariable.woff2": {
+    "file": "GeistMonoVariable.woff2",
+    "src": "assets/GeistMonoVariable.woff2"
+  },
+  "assets/GeistVariable.woff2": {
+    "file": "GeistVariable.woff2",
+    "src": "assets/GeistVariable.woff2"
+  },
   "frontend/entrypoints/main.ts": {
     "file": "main.js",
     "name": "main",
@@ -6,6 +14,10 @@
     "isEntry": true,
     "css": [
       "main.css"
+    ],
+    "assets": [
+      "GeistVariable.woff2",
+      "GeistMonoVariable.woff2"
     ]
   }
 }
