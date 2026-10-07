@@ -59,7 +59,8 @@ To keep the theme clean and prevent layout shifts (FOUT) or double-loading fonts
 Run these simultaneously during development:
 
 * `npm run dev` - Starts the Vite compiler to watch the `/frontend` directory.
-* `shopify theme dev --store=YOUR_STORE_URL` - Syncs the local environment with the Shopify preview store.
+* `npm run theme:dev -- --store=YOUR_STORE_URL` - Runs `shopify theme dev --theme-editor-sync`, syncing the local environment with the Shopify preview store **and** writing Theme Editor changes (`config/settings_data.json`, JSON templates/section groups) back to your local files. Without `--theme-editor-sync`, editor changes stay on the remote development theme only and are never saved locally.
+* `npm run theme:pull-settings -- --store=YOUR_STORE_URL` - One-off pull of `settings_data.json` and JSON templates from a theme (add `--theme=<id>` to pick one) if you made editor changes without sync enabled.
 * `npm run build` - Generates minified production assets before deployment.
 
 ## Repository Contents
@@ -73,9 +74,13 @@ Run these simultaneously during development:
 
 ## Security & Audit Notes
 
-During the final build, `npm audit` flagged vulnerabilities within the `liquidjs` dependency (high severity in `pop`, `strip_html`, and `join` filters).
+All `npm audit` findings are in **dev-only tooling** pulled in by `vite-plugin-shopify` → `@shopify/cli-kit`. `npm audit --omit=dev` reports **0 vulnerabilities**, and nothing from this chain ships in the compiled storefront assets.
 
-These were **intentionally not forced** (`npm audit fix --force`) because the required fix forces a major version upgrade to `vite-plugin-shopify@3.0.1`. This constitutes a breaking change that could destabilize the current build pipeline and Vite integration. The vulnerabilities are contained within the local build environment and do not affect the compiled storefront assets.
+* **Fixed:** `http-cache-semantics` and `source-map-js` (via `npm audit fix`), and `liquidjs` (pinned to `^10.30.0` through `overrides` in `package.json`, a non-breaking minor bump).
+* **Accepted (no safe fix available):**
+  * `braces` (and dependents `micromatch`, `fast-glob`) — no patched release of `braces` exists yet. Exploitation requires attacker-controlled glob patterns, which this build never accepts.
+  * `@opentelemetry/*` — the patch is only in the 2.x line, but `@shopify/cli-kit` is built against the 1.x API (`new Resource()`, `View`), so overriding it breaks the Vite plugin on import. The issue concerns parsing incoming W3C Baggage headers; the CLI only exports telemetry. Revisit when Shopify releases a `cli-kit` on OpenTelemetry 2.x.
+* **Do not run `npm audit fix --force`:** it downgrades `vite-plugin-shopify` to `3.0.1`, which is incompatible with the current Vite setup and does not remove the `cli-kit` chain.
 
 ## Code Quality Verification
 
