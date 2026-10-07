@@ -59,8 +59,8 @@ To keep the theme clean and prevent layout shifts (FOUT) or double-loading fonts
 Run these simultaneously during development:
 
 * `npm run dev` - Starts the Vite compiler to watch the `/frontend` directory.
-* `npm run theme:dev -- --store=YOUR_STORE_URL` - Runs `shopify theme dev --theme-editor-sync`, syncing the local environment with the Shopify preview store **and** writing Theme Editor changes (`config/settings_data.json`, JSON templates/section groups) back to your local files. Without `--theme-editor-sync`, editor changes stay on the remote development theme only and are never saved locally.
-* `npm run theme:pull-settings -- --store=YOUR_STORE_URL` - One-off pull of `settings_data.json` and JSON templates from a theme (add `--theme=<id>` to pick one) if you made editor changes without sync enabled.
+* `npm run theme:dev` - Runs `shopify theme dev --theme-editor-sync` against the **Vite Theme V1** theme (`#188731785440`) on `theme-research-2026.myshopify.com`, syncing the local environment with the Shopify preview store **and** writing Theme Editor changes (`config/settings_data.json`, JSON templates/section groups) back to your local files. Without `--theme-editor-sync`, editor changes stay on the remote development theme only and are never saved locally.
+* `npm run theme:pull-settings` - One-off pull of `settings_data.json` and JSON templates from Vite Theme V1 if you made editor changes without sync enabled.
 * `npm run build` - Generates minified production assets before deployment.
 
 ## Repository Contents

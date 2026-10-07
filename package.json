@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "theme:dev": "shopify theme dev --theme-editor-sync",
-    "theme:pull-settings": "shopify theme pull --only config/settings_data.json --only 'templates/*.json' --only 'sections/*.json'"
+    "theme:dev": "shopify theme dev --theme-editor-sync --store=theme-research-2026.myshopify.com --theme=188731785440",
+    "theme:pull-settings": "shopify theme pull --store=theme-research-2026.myshopify.com --theme=188731785440 --only config/settings_data.json --only 'templates/*.json' --only 'sections/*.json'"
   },
   "repository": {
     "type": "git",
